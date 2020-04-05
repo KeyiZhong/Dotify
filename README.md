@@ -7,4 +7,6 @@
 None for now
 
 ## Screenshot
-![Screenshot](app/drawable/screenshot.jpg)
+![Screenshot](app/src/main/res/drawable/screenshot.jpg)
+
+
