@@ -4,7 +4,7 @@
 
 
 ## Extra attempted
-1，5
+5
 
 ## Screenshot
 ![Screenshot](app/src/main/res/drawable/Screenshot.png)
