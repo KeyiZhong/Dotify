@@ -1,12 +1,10 @@
 # UW Info 449 sp20
-## HW1 - Layouit5s&Events
+## HW1 - Layout&Events
 ### This app has only one page simulate a music play app
 
 
 ## Extra attempted
-None for now
+1，5
 
 ## Screenshot
-![Screenshot](app/src/main/res/drawable/screenshot.jpg)
-
-
+![Screenshot](app/src/main/res/drawable/screenshot.png)
