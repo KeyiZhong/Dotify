@@ -7,4 +7,4 @@
 1，5
 
 ## Screenshot
-![Screenshot](app/src/main/res/drawable/screenshot.png)
+![Screenshot](app/src/main/res/drawable/Screenshot.png)
