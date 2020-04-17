@@ -26,14 +26,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun next(view: View) {
-        toastText("Skipping to next track")
+        makeToast("Skipping to next track")
     }
 
     fun previous(view: View) {
-        toastText("Skipping to previous track")
+        makeToast("Skipping to previous track")
     }
 
-    fun toastText(text:String) {
+    fun makeToast(text:String) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
     }
 

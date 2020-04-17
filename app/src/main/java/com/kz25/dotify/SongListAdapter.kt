@@ -54,8 +54,9 @@ class SongListAdapter(initialSong:List<Song>):RecyclerView.Adapter<SongListAdapt
                 onSongClickListener?.invoke(song)
             }
 
-            itemView.setOnLongClickListener {
+            itemView.setOnLongClickListener{
                 onSongLongClickListner?.invoke(song)
+                true
             }
         }
 
