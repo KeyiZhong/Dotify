@@ -19,7 +19,8 @@
         app:layout_constraintLeft_toRightOf="@id/ivSongImage"
         app:layout_constraintBottom_toTopOf="@id/tvArtists"
         app:layout_constraintTop_toTopOf="@id/ivSongImage"
-        android:id="@+id/tvTitle"/>
+        android:id="@+id/tvTitle"
+        android:layout_marginStart="16dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -28,6 +29,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
         app:layout_constraintBottom_toBottomOf="@id/ivSongImage"
         android:id="@+id/tvArtists"
+        android:layout_marginStart="16dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
