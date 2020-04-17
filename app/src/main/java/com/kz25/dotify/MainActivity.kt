@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.ericchee.songdataprovider.Song
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
@@ -13,19 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         tvPlays.text = "${plays.toString()} ${tvPlays.text.split(" ")[1]}"
-    }
-
-    fun changeUser(view: View) {
-        if (btnChangeUser.text == "Apply") {
-            btnChangeUser.text = "CHANGE USER"
-            tvUserName.visibility = View.VISIBLE
-            etUserName.visibility = View.INVISIBLE
-            tvUserName.text = etUserName.text
-        }else {
-            btnChangeUser.text = "Apply"
-            tvUserName.visibility = View.INVISIBLE
-            etUserName.visibility = View.VISIBLE
-        }
+        val song = intent.getParcelableExtra<Song>(SONG_KEY)
+        ivAlbumCover.setImageResource(song.largeImageID)
+        tvArtists.text = song.artist
+        tvSongTitle.text = song.title
     }
 
     fun start(view: View) {
@@ -34,10 +26,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun next(view: View) {
-        Toast.makeText(this, "Skipping to next track", Toast.LENGTH_SHORT).show()
+        toastText("Skipping to next track")
     }
 
     fun previous(view: View) {
-        Toast.makeText(this, "Skipping to previous track", Toast.LENGTH_SHORT).show()
+        toastText("Skipping to previous track")
+    }
+
+    fun toastText(text:String) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object {
+        const val SONG_KEY = "SONG_KEY"
     }
 }
