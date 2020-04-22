@@ -2,6 +2,7 @@ package com.kz25.dotify
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.ericchee.songdataprovider.Song
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         ivAlbumCover.setImageResource(song.largeImageID)
         tvArtists.text = song.artist
         tvSongTitle.text = song.title
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     fun start(view: View) {
@@ -39,5 +41,13 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val SONG_KEY = "SONG_KEY"
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
