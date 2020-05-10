@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.ericchee.songdataprovider.Song
+import com.kz25.dotify.fragment.SongDiffCallback
+import com.kz25.dotify.manager.model.Song
+import com.squareup.picasso.Picasso
 
 class SongListAdapter(initialSong:List<Song>):RecyclerView.Adapter<SongListAdapter.SongViewHolder>() {
 
@@ -31,7 +32,8 @@ class SongListAdapter(initialSong:List<Song>):RecyclerView.Adapter<SongListAdapt
 
     fun change(newSong: List<Song>) {
 
-        val callback = SongDiffCallback(listOfSongs, newSong)
+        val callback =
+            SongDiffCallback(listOfSongs, newSong)
         val diffResult = DiffUtil.calculateDiff(callback)
         diffResult.dispatchUpdatesTo(this)
 
@@ -46,7 +48,7 @@ class SongListAdapter(initialSong:List<Song>):RecyclerView.Adapter<SongListAdapt
 
 
         fun bind(song: Song) {
-            ivSong.setImageResource(song.smallImageID)
+            Picasso.get().load(song.smallImageURL).into(ivSong)
             tvTitle.text = song.title
             tvArtists.text = song.artist
 

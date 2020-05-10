@@ -1,7 +1,7 @@
-package com.kz25.dotify
+package com.kz25.dotify.fragment
 
-import com.ericchee.songdataprovider.Song
 import androidx.recyclerview.widget.DiffUtil
+import com.kz25.dotify.manager.model.Song
 
 
 class SongDiffCallback (
