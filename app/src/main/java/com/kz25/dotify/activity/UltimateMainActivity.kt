@@ -4,6 +4,7 @@ import com.kz25.dotify.DotifyApp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.kz25.dotify.R
 import com.kz25.dotify.fragment.NowPlayingFragment
 import com.kz25.dotify.fragment.OnSongClickListener
@@ -38,6 +39,8 @@ class UltimateMainActivity : AppCompatActivity(),
                 .replace(R.id.fragContainer, listFragment, SongListFragment.TAG)
                 .addToBackStack(SongListFragment.TAG)
                 .commit()
+        },{
+            Toast.makeText(this,"Something went wrong",Toast.LENGTH_LONG).show()
         })
 
 
